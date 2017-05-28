@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<bean id="cfTaskExecutor" class="org.springframework.scheduling.commonj.WorkManagerTaskExecutor" scope="singleton">
+	  <property name="workManagerName" value="wm/cfworkers" />
+	  <property name="resourceRef" value="true"/>
+	</bean>	
+	
+	<bean id="eventExecutor" class="com.nik.cfworkmanagerapp.executor.EventExecutor"/>
+	
+</beans>
